@@ -36,12 +36,27 @@ if st.experimental_user.email in USERS:
         return xgb_model_raman,scale,ann_model_process
     xgb_model_raman,scale,ann_model_process = load_model_predict()
     @st.cache_resource
-    def db_connection():
-        #-----------initial connect to sql server------------------
-        conx = pyodbc.connect("driver={SQL Server}; server=NGUYENDS; database=BioPharm;UID=sa; PWD=187201@Abc")#ket noi database
-        cursor = conx.cursor()# khoi tao ket noi
-        return conx,cursor
-    conx, cursor = db_connection()
+    # def db_connection():
+    #     #-----------initial connect to sql server------------------
+    #     conx = pyodbc.connect("driver={SQL Server}; server=NGUYENDS; database=BioPharm;UID=sa; PWD=187201@Abc")#ket noi database
+    #     cursor = conx.cursor()# khoi tao ket noi
+    #     return conx,cursor
+    # conx, cursor = db_connection()
+    @st.cache_resource
+    def init_connection():
+        return pyodbc.connect(
+            "DRIVER={ODBC Driver 17 for SQL Server};SERVER="
+            + st.secrets["server"]
+            + ";DATABASE="
+            + st.secrets["database"]
+            + ";UID="
+            + st.secrets["username"]
+            + ";PWD="
+            + st.secrets["password"]
+        )
+
+    conx = init_connection()
+    cursor = conx.cursor()
     def predict(input_df1,input_df2):
         
         X_pro = input_df1
