@@ -27,6 +27,11 @@ USERS = {
 
 if st.experimental_user.email in USERS:
     st.write('Hello, %s!' % st.experimental_user.email)
+    st.write('server:',st.secrets["server"])
+    st.write('database:',st.secrets["database"])
+    st.write('username:',st.secrets["username"])
+  
+    
     @st.cache_resource
     def load_model_predict():
         xgb_model_raman = xgb.XGBRegressor()
