@@ -23,7 +23,7 @@ from scipy.signal import savgol_filter
 USERS = {
     'test@localhost.com',
     'thanhnguyen187201@gmail.com',
-    'trinhntrung@gmail.com'
+    'trinhntrung@gmail.com',
 }
 server = st.secrets["server"]
 database = st.secrets["database"]
