@@ -48,7 +48,7 @@ if st.experimental_user.email in USERS:
         #-----------initial connect to sql server------------------
         # conx = pyodbc.connect("driver={SQL Server}; server=20.5.100.16; database=BioPharm;UID=sa; PWD=nguyen187201@Abc")#ket noi database
         # conx = pyodbc.connect("Driver={ODBC Driver 17 for SQL Server};Server=10.14.171.59;Database=BioPharm;UID=sa;PWD=nguyen187201@Abc")
-        conx = pyodbc.connect("Driver={ODBC Driver 17 for SQL Server};Server="+server";Database="+database";UID="+user";PWD="+ passwd ) 
+        conx = pyodbc.connect("Driver={ODBC Driver 17 for SQL Server};Server="+server +";Database=" +database+";UID=" +user +";PWD="+ passwd ) 
 
         cursor = conx.cursor()# khoi tao ket noi
         return conx,cursor
