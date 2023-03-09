@@ -24,7 +24,10 @@ USERS = {
     'test@localhost.com',
     'thanhnguyen187201@gmail.com'
 }
-
+server = st.secrets["server"]
+database = st.secrets["database"]
+user = st.secrets["username"]
+passwd = st.secrets["password"]
 if st.experimental_user.email in USERS:
     st.write('Hello, %s!' % st.experimental_user.email)
     st.write('server:',st.secrets["server"])
@@ -44,7 +47,8 @@ if st.experimental_user.email in USERS:
     def db_connection():
         #-----------initial connect to sql server------------------
         # conx = pyodbc.connect("driver={SQL Server}; server=20.5.100.16; database=BioPharm;UID=sa; PWD=nguyen187201@Abc")#ket noi database
-        conx = pyodbc.connect("Driver={ODBC Driver 17 for SQL Server};Server=20.5.100.16;Database=BioPharm;UID=sa;PWD=nguyen187201@Abc")
+        # conx = pyodbc.connect("Driver={ODBC Driver 17 for SQL Server};Server=10.14.171.59;Database=BioPharm;UID=sa;PWD=nguyen187201@Abc")
+        conx = pyodbc.connect("Driver={ODBC Driver 17 for SQL Server};Server="+server";Database="+database";UID="+user";PWD="+ passwd ) 
 
         cursor = conx.cursor()# khoi tao ket noi
         return conx,cursor
