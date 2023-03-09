@@ -43,7 +43,9 @@ if st.experimental_user.email in USERS:
     @st.cache_resource
     def db_connection():
         #-----------initial connect to sql server------------------
-        conx = pyodbc.connect("driver={SQL Server}; server=20.5.100.16; database=BioPharm;UID=sa; PWD=nguyen187201@Abc")#ket noi database
+        # conx = pyodbc.connect("driver={SQL Server}; server=20.5.100.16; database=BioPharm;UID=sa; PWD=nguyen187201@Abc")#ket noi database
+        conx = pyodbc.connect("Driver={ODBC Driver 17 for SQL Server};Server=20.5.100.16;Database=BioPharm;UID=sa;PWD=nguyen187201@Abc")
+
         cursor = conx.cursor()# khoi tao ket noi
         return conx,cursor
     conx, cursor = db_connection()
