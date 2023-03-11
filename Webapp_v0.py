@@ -21,7 +21,7 @@ from scipy import signal
 from scipy.signal import savgol_filter
 # Show extra buttons for admin users.
 USERS = {
-    'test@localhost.com',
+    'test@localhost.com'
     'thanhnguyen187201@gmail.com'
     # 'trinhntrung@gmail.com'
 }
