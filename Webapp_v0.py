@@ -29,6 +29,7 @@ server = st.secrets["server"]
 database = st.secrets["database"]
 user = st.secrets["username"]
 passwd = st.secrets["password"]
+st.write(st.experimental_user.email)
 if st.experimental_user.email in USERS:
     st.write('Hello, %s!' % st.experimental_user.email)
     st.write('server:',st.secrets["server"])
