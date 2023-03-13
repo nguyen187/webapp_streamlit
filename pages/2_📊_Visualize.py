@@ -122,7 +122,6 @@ if __name__=='__main__':
         st.stop()
     v = Vi()
     v.get_options()
-    r1,r2 = st.row
     if st.checkbox('Scatter Chart'):
         s = v.show_scatter()
     if st.checkbox('Pie Chart'):
