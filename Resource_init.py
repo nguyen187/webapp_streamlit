@@ -80,7 +80,7 @@ passwd = st.secrets["password"]
 def Login(w =False):
     if st.experimental_user.email in USERS:
         if w == True:
-            st.write("# Welcome to BiaPharm Website! 👋")
+            st.write("# Welcome to BioPharm Website! 👋")
             st.write('Hello, %s!' % st.experimental_user.email)
             st.write('server:',server)
             st.write('database:',database)
