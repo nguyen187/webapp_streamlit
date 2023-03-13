@@ -80,11 +80,11 @@ passwd = st.secrets["password"]
 def Login(w =False):
     if st.experimental_user.email in USERS:
         if w == True:
-            st.write("# Welcome to BioPharm Website! 👋")
+            st.write("# Welcome to BiaPharm Website! 👋")
             st.write('Hello, %s!' % st.experimental_user.email)
-            st.write('server:',server)
-            st.write('database:',database)
-            st.write('username:',user)
+            st.write('server: {sv}'.format(sv = server))
+            image = Image.open('anhbia.png')
+            st.image(image)
         return True
     else:
         st.error("Your account don't permission", icon="🚨")
