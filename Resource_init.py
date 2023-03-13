@@ -12,7 +12,7 @@ from scipy.signal import savgol_filter
 import seaborn as sns
 import matplotlib.pyplot as plt
 from markdown import markdown
-
+from PIL import Image
 # Khởi tạo biến toàn cục connection pool
 # pool = None
 
